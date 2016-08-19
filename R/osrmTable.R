@@ -128,7 +128,7 @@ osrmTable <- function(loc, src = NULL, dst = NULL){
     coords <- coordFormat(res = res, src = src, dst = dst)
 
     return(list(durations = durations,
-                distaces = distances,
+                distances = distances,
                 sources = coords$sources,
                 destinations = coords$destinations))
   }, error=function(e) {message("osrmTable function returns an error: \n", e)})
