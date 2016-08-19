@@ -121,13 +121,15 @@ osrmTable <- function(loc, src = NULL, dst = NULL){
     if(res$code != "Ok"){stop(e)}
     
     # get the distance table
-    durations <- distTableFormat(res = res, src = src, dst = dst)
-    
+    durations <- durTableFormat(res = res, src = src, dst = dst)
+    distances <- distTableFormat(res = res, src = src, dst = dst)
+
     # get the coordinates
     coords <- coordFormat(res = res, src = src, dst = dst)
-    
-    return(list(durations = durations, 
-                sources = coords$sources, 
+
+    return(list(durations = durations,
+                distaces = distances,
+                sources = coords$sources,
                 destinations = coords$destinations))
   }, error=function(e) {message("osrmTable function returns an error: \n", e)})
   return(NULL)
