@@ -100,6 +100,7 @@ osrmTable <- function(loc, src = NULL, dst = NULL){
                    paste(0:(nrow(src)-1), collapse = ";"), 
                    "&destinations=", 
                    paste(nrow(src):(nrow(loc)-1), collapse = ";"), 
+                   "&output_components=distances;durations",
                    sep="")
     }
 
